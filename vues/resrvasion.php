@@ -3,9 +3,21 @@
 
  include '../db/connx.php';
 
- if (isset($_POST['username'])&&isset($_POST['username'])&&isset($_POST['username'])&&isset($_POST['username'])&&isset($_POST['username'])&&) {
-    
-     echo "Reservation has been successfully processed!";
+ if (isset($_POST['username'])&&isset($_POST['email'])&&isset($_POST['guest'])&&isset($_POST['date_reserve'])&&isset($_POST['time_reserve'])) {
+  $username = $_POST['username'];
+  $email = $_POST['email'];
+  $guest = $_POST['guest'];
+  $date_reserve = $_POST['date_reserve'];
+  $time_reserve = $_POST['time_reserve'];
+ 
+
+    if (empty($username)||empty($email)||empty($guest)||empty($date_reserve)||empty($time_reserve)) {
+   
+      
+    }else {
+     $stmt = "INSERT INTO data_reserve(username ,email ,guest, date_reserve ,time_reserve)VALUES('$username','$email','$guest','$date_reserve','$time_reserve')";
+     mysqli_query($connx, $stmt);
+    }
  }
  
 ?>
@@ -23,7 +35,7 @@
 <body class="bg-gray-100">
 
 
-<nav class="bg-white dark:bg-gray-900 fixed w-full z-20 top-0 start-0 border-b border-gray-200 dark:border-gray-600">
+ <nav class="bg-white dark:bg-gray-900 fixed w-full z-20 top-0 start-0 border-b border-gray-200 dark:border-gray-600">
   <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
   <a href="https://flowbite.com/" class="flex items-center space-x-3 rtl:space-x-reverse">
       <img src="https://flowbite.com/docs/images/logo.svg" class="h-8" alt="Flowbite Logo">
@@ -55,7 +67,7 @@
     </ul>
   </div>
   </div>
-</nav>
+</nav> 
 
   <!-- Grid Container -->
   <div id="continer" class="p-6 bg-gray-50 my-[60px]">
@@ -118,7 +130,7 @@
 <div id="Réserver" class="hidden flex  items-center justify-center p-12 rounded-lg  shadow-lg ">
 
 <div class="mx-auto w-full max-w-[550px] shadow-inner">
-  <form action="https://formbold.com/s/FORM_ID" method="POST">
+  <form action="" method="POST">
     <div class="-mx-3 flex flex-wrap">
       <div class="w-full px-3 sm:w-1/2">
         <div class="mb-5">
@@ -132,7 +144,7 @@
             type="text"
             name="username"
             id="username"
-            placeholder="First Name"
+            placeholder="username"
             class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
           />
         </div>
@@ -143,13 +155,13 @@
             for="lName"
             class="mb-3 block text-base font-medium text-[#07074D]"
           >
-            Last Name
+            email
           </label>
           <input
-            type="text"
-            name="lName"
-            id="lName"
-            placeholder="Last Name"
+            type="email"
+            name="email"
+            id="email"
+            placeholder="email"
             class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
           />
         </div>
@@ -183,7 +195,7 @@
           </label>
           <input
             type="date"
-            name="date"
+            name="date_reserve"
             id="date"
             class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
           />
@@ -199,7 +211,7 @@
           </label>
           <input
             type="time"
-            name="time"
+            name="time_reserve"
             id="time"
             class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
           />
@@ -245,9 +257,8 @@
 
     <div>
       <button
-        class="hover:shadow-form rounded-md bg-[#6A64F1] py-3 px-8 text-center text-base font-semibold text-white outline-none"
-      >
-        Submit
+        class="hover:shadow-form rounded-md bg-[#6A64F1] py-3 px-8 text-center text-base font-semibold text-white outline-none">
+        <a href="">Submit</a>
       </button>
     </div>
   </form>
