@@ -62,7 +62,7 @@ if (isset($_POST['username'])&&isset($_POST['email'])&&isset($_POST['password'])
                             </div>
                         </div>
                         <button type="submit"  id="btnRojester" class="w-full inline-block pt-2 pr-2 pb-2 pl-2 my-8 text-xl font-medium text-center text-white bg-[#006666]
-                        rounded-lg transition duration-200  ease">Create an account</button>
+                        rounded-lg transition duration-200  ease"><a href="<?php echo '../vues/login.php';?>">Create an account</a></button>
                         <p class="text-sm font-light text-gray-500 dark:text-gray-400">
                             Already have an account? <a href="#" class="font-medium text-primary-600 hover:underline dark:text-primary-500" >Login here</a>
                         </p>
