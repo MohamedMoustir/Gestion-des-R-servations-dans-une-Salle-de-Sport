@@ -22,17 +22,17 @@
       if ($resulte->num_rows>0) {
         while($row=$resulte->fetch_assoc()){
       if ($row['Disponibilite']=='1') {
-  $primaryColor = "bg-green-700";
-  $istrue = 'Disponibile';
- }else {
-  $primaryColor = "bg-red-700";
-  $istrue = 'not Disponibile';
-}
+           $primaryColor = "bg-green-700";
+            $istrue = 'Disponibile';
+          }else {
+            $primaryColor = "bg-red-700";
+            $istrue = 'not Disponibile';
+        }
       ?> 
       <!-- Card 1 -->
       <div class="bg-white shadow-lg rounded-lg  transform transition duration-300 hover:scale-105 hover:shadow-xl">
         <div class="relative">
-          <img src="<?php echo $row['image_path']; ?>" alt="Yoga" class="w-full h-36 object-cover">
+          <img src="<?php echo '../imgs/'.$row['image_path'].''; ?>" alt="Yoga" class="w-full h-36 object-cover">
           <div class="absolute top-2 left-2 <?php echo $primaryColor; ?> text-white text-xs px-2 py-1 rounded-full">
           <?php echo $istrue; ?>
           </div>
@@ -63,8 +63,6 @@
       }}
       ?>
     
-  
-
       <!-- Add more cards similarly -->
 
     </div>
