@@ -19,9 +19,9 @@ if ($_SERVER['REQUEST_METHOD']==='POST' && isset($_POST['email']) && isset($_POS
      if ($result->num_rows>0){
       $user = $result->fetch_assoc();
       if ($user['isAdmin']== '1') {
-      header('location:./dachbourd.php');
+      header('location:../vues\dachbourd.php');
       }else {
-        echo 'not admin';
+        header('location:../vues/resrvasion.php');
       }
 
     }else {
@@ -92,7 +92,7 @@ if ($_SERVER['REQUEST_METHOD']==='POST' && isset($_POST['email']) && isset($_POS
               rounded-lg transition duration-200  ease">Sign
               in</button>
             <p class="text-sm font-light text-gray-500 dark:text-gray-400">
-              Don’t have an account yet? <a href="#"
+              Don’t have an account yet? <a href="<?php echo '../vues\Rojester.php' ?>"
                 class="font-medium text-primary-600 hover:underline dark:text-primary-500">Sign up</a>
             </p>
           </form>
