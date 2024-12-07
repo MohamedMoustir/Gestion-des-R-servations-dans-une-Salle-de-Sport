@@ -30,9 +30,7 @@ if (isset($_POST['activity-name'])&&isset($_POST['date_debut'])&&isset($_POST['d
 
     <title>Document</title>
 </head>
-<body>
-    
-</body>
+
 
 <body>
   <!-- component -->
@@ -340,7 +338,7 @@ if (isset($_POST['activity-name'])&&isset($_POST['date_debut'])&&isset($_POST['d
                     <label for="disponibilite" class="text-sm font-medium text-gray-900 block mb-2">Availability</label>
                     <select name="disponibilite" id="disponibilite" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-cyan-600 focus:border-cyan-600 block w-full p-2.5">
                         <option value="1">Available</option>
-                        <option value="0">Not Available</option>
+                        <option value="2">Not Available</option>
                     </select>
                 </div>
             </div>
@@ -399,7 +397,7 @@ if (isset($_POST['activity-name'])&&isset($_POST['date_debut'])&&isset($_POST['d
   </div>
 </div>
       <!-- footer -->
-      <div class="text-blue-gray-600">
+      <div class="text-blue-gray-600 ">
         <footer class="py-2">
           <div class="flex w-full flex-wrap items-center justify-center gap-6 px-2 md:justify-between">
             <p class="block antialiased font-sans text-sm leading-normal font-normal text-inherit">© 2023, créé avec
