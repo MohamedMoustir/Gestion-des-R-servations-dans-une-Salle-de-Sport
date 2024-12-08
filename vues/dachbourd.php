@@ -93,7 +93,7 @@ if (isset($_POST['activity-name'])&&isset($_POST['date_debut'])&&isset($_POST['d
           </li>
           <li>
             <a class="" href="#">
-              <button id="users_dash"
+              <button id="users_dash" onclick="users_dash()"
                 class="middle none font-sans font-bold center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 rounded-lg text-white hover:bg-white/10 active:bg-white/30 w-full flex items-center gap-4 px-4 capitalize"
                 type="button">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"
@@ -352,9 +352,19 @@ if (isset($_POST['activity-name'])&&isset($_POST['date_debut'])&&isset($_POST['d
 </div>
 
       <!-- users -->
+      <?php 
+        $stmt = "SELECT *
+        FROM reservations r
+        JOIN activites a ON r.activityId = a.id_activite
+        JOIN users u ON r.userId = u.id_users
+        ";
 
-      <div class="p-4">
-  <div class="hidden overflow-x-auto">
+$result = mysqli_query($connx, $stmt);
+
+
+?>
+<div class="p-4">
+  <div class="overflow-x-auto">
     <table class="min-w-full bg-white border border-gray-200 rounded-lg">
       <!-- Table Header -->
       <thead class="bg-blue-500 text-white">
@@ -362,40 +372,33 @@ if (isset($_POST['activity-name'])&&isset($_POST['date_debut'])&&isset($_POST['d
           <th class="px-6 py-3 text-left font-semibold"># Réservation</th>
           <th class="px-6 py-3 text-left font-semibold">Membre</th>
           <th class="px-6 py-3 text-left font-semibold">Activité</th>
+          <th class="px-6 py-3 text-left font-semibold">time</th>
           <th class="px-6 py-3 text-left font-semibold">Date</th>
-          <th class="px-6 py-3 text-left font-semibold">Heure</th>
           <th class="px-6 py-3 text-center font-semibold">Actions</th>
         </tr>
       </thead>
       <!-- Table Body -->
       <tbody>
-        <tr class="border-b border-gray-200 hover:bg-gray-100">
-          <td class="px-6 py-4">12345</td>
-          <td class="px-6 py-4">Mohamed Moustir</td>
-          <td class="px-6 py-4">Yoga</td>
-          <td class="px-6 py-4">10 Décembre 2024</td>
-          <td class="px-6 py-4">18:00</td>
-          <td class="px-6 py-4 text-center space-x-2">
-            <button class="text-blue-500 hover:underline">Modifier</button>
-            <button class="text-red-500 hover:underline">Supprimer</button>
-          </td>
-        </tr>
-        <!-- Repeat for other rows -->
-        <tr class="border-b border-gray-200 hover:bg-gray-100">
-          <td class="px-6 py-4">12346</td>
-          <td class="px-6 py-4">Ali Khadim</td>
-          <td class="px-6 py-4">Zumba</td>
-          <td class="px-6 py-4">12 Décembre 2024</td>
-          <td class="px-6 py-4">17:00</td>
-          <td class="px-6 py-4 text-center space-x-2">
-            <button class="text-blue-500 hover:underline">Modifier</button>
-            <button class="text-red-500 hover:underline">Supprimer</button>
-          </td>
-        </tr>
+        <?php while ($row =$result->fetch_assoc()): ?>
+          <tr class="border-b border-gray-200 hover:bg-gray-100">
+            <td class="px-6 py-4"><?php echo $row['id']; ?></td>
+            <td class="px-6 py-4"><?php echo $row['username']; ?></td>
+            <td class="px-6 py-4"><?php  echo $row['Nom_activite']; ?></td>
+            <td class="px-6 py-4"><?php  echo $row['time_activity']; ?></td>
+            <td class="px-6 py-4"><?php  echo $row['date_activity']; ?></td>
+            <td class="px-6 py-4 text-center space-x-2">
+              <!-- <button class="text-blue-500 hover:underline">Modifier</button> -->
+              <button class="text-red-500 hover:underline">Supprimer</button>
+            </td>
+          </tr>
+        <?php endwhile; ?>
       </tbody>
     </table>
   </div>
 </div>
+
+   
+   
       <!-- footer -->
       <div class="text-blue-gray-600 ">
         <footer class="py-2">
@@ -437,6 +440,7 @@ if (isset($_POST['activity-name'])&&isset($_POST['date_debut'])&&isset($_POST['d
   </div>
 
  
+  <script src="../script\main.js"></script>
 
 </body>
 
