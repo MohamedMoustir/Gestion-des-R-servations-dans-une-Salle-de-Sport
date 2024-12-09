@@ -42,7 +42,14 @@
             <li class='max-lg:border-b max-lg:py-3 px-3'><a href='../vues/home.php'
               class='hover:text-[#007bff] text-[#333] block font-semibold text-[15px]'>about</a>
             </li>
-            <li class='max-lg:border-b max-lg:py-3 px-3'><a href='../vues/page_reservation.php'
+
+            <?php  
+     $sq = "SELECT * FROM users ";
+     $result = $connx->query($sq);
+     $rows=mysqli_fetch_assoc($result);
+     ?>
+     
+            <li class='max-lg:border-b max-lg:py-3 px-3'><a href='../vues/page_reservation.php?id_users=<?php echo $rows['id_users'];?>'
               class='hover:text-[#007bff] text-[#333] block font-semibold text-[15px]'>Réservations</a>
             </li>
             <li class='max-lg:border-b max-lg:py-3 px-3'><a href='javascript:void(0)'
@@ -52,10 +59,10 @@
         </div>
 
         <div class='flex items-center ml-auto space-x-6'>
-          <button class='font-semibold text-[15px] border-none outline-none'><a href='javascript:void(0)'
+          <button class='font-semibold text-[15px] border-none outline-none'><a href='../vues/login.php'
             class='text-[#007bff] hover:underline'>Login</a></button>
           <button 
-            class='px-4 py-2 text-sm rounded-sm font-bold text-white border-2 border-[#007bff] bg-[#007bff] transition-all ease-in-out duration-300 hover:bg-transparent hover:text-[#007bff]'><a href="../vues/login.php">Sign up</a>
+            class='px-4 py-2 text-sm rounded-sm font-bold text-white border-2 border-[#007bff] bg-[#007bff] transition-all ease-in-out duration-300 hover:bg-transparent hover:text-[#007bff]'><a href="../vues/Rojester.php">Sign up</a>
             </button>
 
           <button id="toggleOpen" class='lg:hidden'>

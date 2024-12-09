@@ -3,17 +3,19 @@
 
  include '../db/connx.php';
 
- if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit_btn'])) {
+ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit_btn'])&&isset($_GET['id_users'])) {
  if (isset($_POST['id_activite']) && isset($_POST['time_activity']) && isset($_POST['date_activity'])) {
   $activity_id = $_POST['id_activite'];
   $date_activity = $_POST['date_activity'];
   $time_activity = $_POST['time_activity'];
-
+  $id_users = $_GET['id_users'];
+  
     if (empty($activity_id)||empty($date_activity)||empty($time_activity)) {
-      echo 'll';
+      
       
     }else {
-      $stmt = "INSERT INTO reservations(activityId, userId, date_activity,time_activity) VALUES ('$activity_id',19,'$date_activity','$time_activity')";
+
+      $stmt = "INSERT INTO reservations(activityId, userId, date_activity,time_activity) VALUES ('$activity_id','$id_users','$date_activity','$time_activity')";
       mysqli_query($connx,$stmt);
  
     }
@@ -37,12 +39,7 @@ require_once "../vues/nav.php"
 ?>
 
   
-      <?php 
-     
-      $sq = "SELECT * FROM users";
-      $result = $connx->query($sq);
-      $rows=mysqli_fetch_assoc($result);
-      ?> 
+    
       <!-- Card 1 -->
       <form class="w-screen bg-gray-50 py-12" method="POST">
   <!-- Section d'en-tête -->
@@ -129,10 +126,6 @@ require_once "../vues/nav.php"
 </form>
 
 
-  
-<?php 
-require_once "../vues/footer.php"
-?>
   <script src="../script/main.js"></script>
 
 </body>

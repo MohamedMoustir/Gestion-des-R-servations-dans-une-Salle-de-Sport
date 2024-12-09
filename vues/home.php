@@ -17,7 +17,6 @@ include '../db/connx.php';
 // $reslue = mysqli_query($connx,$allusers);
 
 // }
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
