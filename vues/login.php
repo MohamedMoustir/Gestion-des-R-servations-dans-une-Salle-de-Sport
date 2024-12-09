@@ -21,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD']==='POST' && isset($_POST['email']) && isset($_POS
       if ($user['isAdmin']== '1') {
       header('location:../vues\dachbourd.php');
       }else {
-        header('location:../vues/resrvasion.php');
+        header('location:../vues/home.php');
       }
 
     }else {
