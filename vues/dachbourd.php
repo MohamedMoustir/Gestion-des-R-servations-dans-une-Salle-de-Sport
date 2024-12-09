@@ -13,7 +13,6 @@ if (isset($_POST['activity-name'])&&isset($_POST['date_debut'])&&isset($_POST['d
     $activity_image = $_POST['activity-image'];
     if (empty( $Nom_Activite)||empty( $Description)||empty( $Capacite)||empty( $date_debut)||empty( $date_fin)||empty( $Disponibilite)||empty( $activity_image)) {
  
-
     }else{
       $sql = "INSERT INTO  activites(Nom_activite,Description_activite,Capacite,date_debut,date_fin,Disponibilite,image_path) VALUES ('$Nom_Activite','$Description','$Capacite','$date_debut','$date_fin','$Disponibilite','$activity_image')";
       mysqli_query($connx , $sql);
@@ -21,6 +20,7 @@ if (isset($_POST['activity-name'])&&isset($_POST['date_debut'])&&isset($_POST['d
     }  
 }
 }
+
 ?>
 
 <!DOCTYPE html>
