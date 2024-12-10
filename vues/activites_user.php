@@ -48,17 +48,18 @@ if (isset($_GET['id'])) {
        <!-- users -->
       <?php 
         $stmt = "SELECT *
-        FROM reservations r
-        JOIN activites a ON r.activityId = a.id_activite
-        JOIN users u ON r.userId = u.id_users
+        FROM reservations 
+        JOIN activites  ON reservations.activityId = activites.id_activite
+        JOIN users  ON reservations.userId = users.id_users
         ";
 
 $result = mysqli_query($connx, $stmt);
 
 ?>
 <?php
-    require_once "../vues/nav.php";
+    include "../vues/nav.php";
     ?>
+
 <div class="p-4">
 
   <div class="overflow-x-auto mb-[300px] mt-[100px]">
