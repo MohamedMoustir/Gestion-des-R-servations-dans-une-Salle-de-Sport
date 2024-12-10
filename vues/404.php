@@ -17,8 +17,7 @@ if (isset($_POST['search'])) {
 <body>
     <!-- component -->
 <style>
-    /* This example part of kwd-dashboard see https://kamona-wd.github.io/kwd-dashboard/ */
-    /* So here we will write some classes to simulate dark mode and tailwind css config in our project */
+ 
     :root {
     --light: #edf2f9;
     --dark: #152e4d;
@@ -119,7 +118,7 @@ if (isset($_POST['search'])) {
         </div>
       </main>
       
-<!--  -->
+
 
     </script>
 </body>
