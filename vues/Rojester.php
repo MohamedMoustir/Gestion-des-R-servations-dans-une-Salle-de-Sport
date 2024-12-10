@@ -29,7 +29,7 @@ if (isset($_POST['username'])&&isset($_POST['email'])&&isset($_POST['password'])
     <title>Document</title>
 </head>
 <body class=" ">
-    <section class="bg-[#2B2A2A] dark:bg-gray-900" style="background-image: url(../Bodye.png); background-repeat: no-repeat; background-size: cover;">
+    <section class="bg-[#2B2A2A] dark:bg-gray-900" style="background-image: url(../imgs/pexels-photo-5941991.webp); background-repeat: no-repeat; background-size: cover;">
         <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
             <a href="#" class="flex items-center mb-6 text-2xl font-semibold text-gray-900 dark:text-white">
                 <img class="w-8 h-8 mr-2" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/logo.svg" alt="logo">
