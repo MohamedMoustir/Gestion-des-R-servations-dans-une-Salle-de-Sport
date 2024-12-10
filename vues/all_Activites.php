@@ -26,9 +26,12 @@ include '../db/connx.php';
 <?php
     require_once "../vues/hedaer.php";
     ?>
+    <h1 class="text-4xl font-semibold leading-9 text-gray-800 dark:text-white ml-[340px] mb-[30px]">All Activites de Salle de Sport</h1>
+
     <div class="overflow-x-auto font-[sans-serif] ml-[340px]">
+
       <table class="min-w-full bg-white">
-        <thead class="whitespace-nowrap">
+        <thead class="whitespace-nowrap border ">
           <tr>
             <th class="p-4 text-left text-sm font-semibold text-black">
               Name
@@ -52,7 +55,7 @@ include '../db/connx.php';
    while ($row =$resluet->fetch_assoc()) {
 
     ?>
-          <tr class="odd:bg-blue-50">
+ <tr class="odd:bg-blue-50">
             <td class="p-4 text-sm">
               <div class="flex items-center cursor-pointer w-max">
                 <img src='<?php echo "../imgs/". $row['image_path'];?>' class="w-9 h-9 rounded-md shrink-0" />

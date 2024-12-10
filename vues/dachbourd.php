@@ -44,6 +44,8 @@ if (isset($_POST['activity-name'])&&isset($_POST['date_debut'])&&isset($_POST['d
    
 
    <!-- ajoute -->
+   <h1 class="text-4xl font-semibold leading-9 text-gray-800 dark:text-white ml-[340px] mb-[30px]">ajoute Activity</h1>
+
    <div class="bg-white border border-4 rounded-lg shadow relative m-10 ml-[380px]" id="ajoute_card">
 
 <div class="flex items-start justify-between p-5 border-b rounded-t">

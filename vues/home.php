@@ -1,8 +1,8 @@
 <?php 
 include '../db/connx.php';
 
- $squl = "SELECT * FROM activites";
- $resluet = mysqli_query($connx,$squl);
+//  $squl = "SELECT * FROM activites";
+//  $resluet = mysqli_query($connx,$squl);
 
 
 ?>
@@ -20,7 +20,7 @@ include '../db/connx.php';
     require_once "../vues/nav.php";
     ?>
 
-<div class="dark:bg-gray-800 bg-red-700" style="background:url(../imgs/pexels-photo-1229356.webp) ; background-position:center  ;  background-size: cover" >
+<div class="dark:bg-gray-800 bg-red-700" style="background:url(https://media.istockphoto.com/id/1547293279/fr/photo/jeune-homme-asiatique-courant-sur-tapis-roulant-fitness-gym-exercise.jpg?s=612x612&w=0&k=20&c=cw_lH5FKi4HPdH1PEuARo4q38y7nrRPIRBpRfIm_M1g=) ; background-position:center  ;  background-size: cover" >
     <div class="dark:bg-transparent">
         <div class="mx-auto flex flex-col items-center py-12 sm:py-24">
             <div class="w-11/12 sm:w-2/3 lg:flex justify-center items-center flex-col mb-5 sm:mb-10">
@@ -56,34 +56,37 @@ include '../db/connx.php';
     </div>
 </div>
 
-<div class="grid grid-cols-3"> 
-    <?php 
-   
-    while ($row =$resluet->fetch_assoc()) {
-   
-    ?>
-<div class="max-w-sm min-w-sm mx-auto p-6 bg-white rounded-lg shadow-xl hover:shadow-2xl transition-shadow duration-300 ease-in-out my-12">
-    <img src="<?php echo "../imgs/". $row['image_path'];?>" alt="Activity Image" class="w-full h-48 object-cover rounded-t-lg transition-transform duration-300 ease-in-out transform hover:scale-105">
-    <div class="p-4">
-        <h2 class="text-2xl font-semibold text-gray-900 mb-2"> <?php echo $row['Nom_activite']; ?></h2>
-        <p class="text-sm text-gray-500 mb-2">Start Date: <?php echo $row['date_debut']; ?></p>
-        <p class="text-sm text-gray-500 mb-2">End Date: <?php echo $row['date_fin']; ?></p>
-        <p class="text-sm text-gray-500 mb-2">Capacity: <?php echo $row['Capacite']; ?> Participants</p>
-        <p class="text-gray-700 text-sm mb-4"><?php echo $row['Description_activite']; ?></p>
-        <div class="flex justify-between items-center">
-            <span class="text-lg font-bold text-gray-900">$299</span>
-            <button class="text-white bg-cyan-600 hover:bg-cyan-700 focus:ring-4 focus:ring-cyan-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center transition-colors duration-300">
-            <a href="../vues/page_reservation.php">reserve Now</a>
-            </button>
-            
-        </div>
+<!-- component -->
+<div class="lg:px-20 md:px-6 px-4 md:py-12 py-8">
+  <div class="lg:flex items-center justify-between">
+    <div class="lg:w-1/3">
+      <h1 class="text-4xl font-semibold leading-9 text-gray-800 dark:text-white">Réservation de Salle de Sport</h1>
+      <p class="text-base leading-6 mt-4 text-gray-600 dark:text-gray-100">
+        Découvrez nos salles équipées des dernières technologies sportives. Réservez maintenant pour profiter d'une expérience sportive unique et motivante.
+      </p>
+      <button role="button" aria-label="Réserver maintenant" class="focus:ring-2 focus:ring-offset-2 focus:ring-gray-700 focus:outline-none mt-6 md:mt-8 text-base font-semibold leading-none text-gray-800 dark:text-white flex items-center hover:underline">
+       <a href="../vues/page_reservation.php">Réserver maintenant</a> 
+        <svg class="ml-2 mt-1 dark:text-white" width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M1.33325 4H10.6666" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" />
+          <path d="M8 6.66667L10.6667 4" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" />
+          <path d="M8 1.33398L10.6667 4.00065" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+      </button>
     </div>
-    
+    <div class="lg:w-7/12 lg:mt-0 mt-8">
+      <div class="w-full h-full bg-gray-200">
+        <img src="https://media.istockphoto.com/id/2154202699/fr/photo/int%C3%A9rieur-sombre-de-la-salle-de-sport-avec-%C3%A9quipement-sportif-pi%C3%A8ce-vide-le-matin.jpg?s=612x612&w=0&k=20&c=-tN5kPFhenbDtUlz71Ycrxne933Bn5TVXpFTg5AnxWg=" alt="Grande salle de sport" class="w-full sm:block hidden" />
+        <img src="https://media.istockphoto.com/id/2075354173/fr/photo/un-couple-de-fitness-fait-une-torsion-de-kettlebell-dans-une-salle-de-sport-ensemble.jpg?s=612x612&w=0&k=20&c=rhV4iqy5FA4opjrAoJdSJ4Q0zKA7iLK8KhcM3J4iVnw=" alt="Grande salle de sport" class="sm:hidden block w-full" />
+      </div>
+      <div class="grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 lg:gap-8 gap-6 lg:mt-8 md:mt-6 mt-4">
+        <img src="https://media.istockphoto.com/id/2075354173/fr/photo/un-couple-de-fitness-fait-une-torsion-de-kettlebell-dans-une-salle-de-sport-ensemble.jpg?s=612x612&w=0&k=20&c=rhV4iqy5FA4opjrAoJdSJ4Q0zKA7iLK8KhcM3J4iVnw=" class="w-full" alt="Équipements modernes" />
+        <img src="https://media.istockphoto.com/id/1493959975/fr/photo/jeune-homme-sentra%C3%AEnant-avec-des-cordes-de-combat-au-gymnase.jpg?s=612x612&w=0&k=20&c=dgUGfRPYviuZDO6OKdZ_QsDqKVvEYxRjzLsWCIYWU7g=" class="w-full" alt="Espace relaxation" />
+      </div>
+    </div>
+  </div>
 </div>
-<?php 
-};
 
-?>
+
 
 </div>
 
