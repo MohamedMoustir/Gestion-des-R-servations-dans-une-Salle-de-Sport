@@ -17,7 +17,7 @@ if ( isset($_POST['activity-name'])&&isset($_POST['date_debut'])&&isset($_POST['
     }else{
       $sql = "INSERT INTO  activites(Nom_activite,Description_activite,Capacite,date_debut,date_fin,Disponibilite,image_path) VALUES ('$Nom_Activite','$Description','$Capacite','$date_debut','$date_fin','$Disponibilite','$activity_image')";
       mysqli_query($connx , $sql);
-
+      require_once "../vues/alert_Success.php";
     } 
     
     
@@ -28,6 +28,7 @@ if (isset($_GET['id'])) {
 
   $squl="DELETE FROM reservations WHERE id ='$id'";
  $result= mysqli_query($connx,$squl);
+ require_once "../vues/alert_Success.php";
 }
 
 ?>

@@ -3,21 +3,21 @@
 
  include '../db/connx.php';
 
- if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit_btn'])&&isset($_GET['id_users'])) {
+ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit_btn'])) {
  if (isset($_POST['id_activite']) && isset($_POST['time_activity']) && isset($_POST['date_activity'])) {
   $activity_id = $_POST['id_activite'];
   $date_activity = $_POST['date_activity'];
   $time_activity = $_POST['time_activity'];
-  $id_users = $_GET['id_users'];
+  
   
     if (empty($activity_id)||empty($date_activity)||empty($time_activity)) {
       
       
     }else {
 
-      $stmt = "INSERT INTO reservations(activityId, userId, date_activity,time_activity) VALUES ('$activity_id','$id_users','$date_activity','$time_activity')";
+      $stmt = "INSERT INTO reservations(activityId, userId, date_activity,time_activity) VALUES ('$activity_id',23,'$date_activity','$time_activity')";
       mysqli_query($connx,$stmt);
- 
+      require_once "../vues/alert_Success.php";
     }
  }
 }
@@ -126,7 +126,11 @@ require_once "../vues/nav.php"
 </form>
 
 
-  <script src="../script/main.js"></script>
+ <footer>
+ <?php 
+require_once "../vues/footer.php"
+?>
+ </footer>
 
 </body>
 </html>

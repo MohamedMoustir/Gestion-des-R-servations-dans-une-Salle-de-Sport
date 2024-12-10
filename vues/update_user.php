@@ -25,7 +25,7 @@ if (isset($_POST['inputs'])) {
 if (!$resltes) {
     die("Update failed: " . mysqli_error($connx));
 } else {
-    echo "Update successful.";
+  require_once "../vues/alert_Success.php";
 }
 
    

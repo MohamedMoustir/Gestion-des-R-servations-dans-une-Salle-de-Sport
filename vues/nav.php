@@ -43,16 +43,13 @@
               class='hover:text-[#007bff] text-[#333] block font-semibold text-[15px]'>about</a>
             </li>
 
-            <?php  
-     $sq = "SELECT * FROM users ";
-     $result = $connx->query($sq);
-     $rows=mysqli_fetch_assoc($result);
-     ?>
+         
      
-            <li class='max-lg:border-b max-lg:py-3 px-3'><a href='../vues/page_reservation.php?id_users=<?php echo $rows['id_users'];?>'
-              class='hover:text-[#007bff] text-[#333] block font-semibold text-[15px]'>Réservations</a>
+     
+            <li class='max-lg:border-b max-lg:py-3 px-3'><a href='../vues/page_reservation.php'
+              class='hover:text-[#007bff] text-[#333] block font-semibold text-[15px]'>Réserve Now</a>
             </li>
-            <li class='max-lg:border-b max-lg:py-3 px-3'><a href='javascript:void(0)'
+            <li class='max-lg:border-b max-lg:py-3 px-3'><a href='../vues/activites_user.php'
               class='hover:text-[#007bff] text-[#333] block font-semibold text-[15px]'>Blog</a>
             </li>
           </ul>

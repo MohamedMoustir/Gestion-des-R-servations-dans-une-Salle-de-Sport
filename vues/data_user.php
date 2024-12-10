@@ -7,7 +7,7 @@ if(isset($_GET['id_users'])) {
 
 $query= "DELETE FROM users WHERE id_users = '$id'";
 $resulte = mysqli_query($connx,$query);
-
+require_once "../vues/alert_Success.php";
 }
 
 

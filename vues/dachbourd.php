@@ -16,7 +16,7 @@ if (isset($_POST['activity-name'])&&isset($_POST['date_debut'])&&isset($_POST['d
     }else{
       $sql = "INSERT INTO  activites(Nom_activite,Description_activite,Capacite,date_debut,date_fin,Disponibilite,image_path) VALUES ('$Nom_Activite','$Description','$Capacite','$date_debut','$date_fin','$Disponibilite','$activity_image')";
       mysqli_query($connx , $sql);
-    
+      require_once "../vues/alert_Success.php";
     }  
 }
 }
@@ -142,16 +142,6 @@ if (isset($_POST['activity-name'])&&isset($_POST['date_debut'])&&isset($_POST['d
   </div>
 
   
-<div id="Success_alert" class="hidden fixed top-8 left-1/2 transform -translate-x-1/2 z-50 flex w-72 sm:w-[30%] bg-gradient-to-r from-green-500 to-green-700 p-4 rounded-lg shadow-lg">
-    <div class="toast Info flex items-center space-x-4 text-white">
-        <i class="fa-solid fa-circle-check text-2xl"></i>
-        <div class="content flex-1">
-            <div class="title font-semibold text-lg">Success</div>
-            <span>This is a success toast.</span>
-        </div>
-        <i class="fa-solid fa-xmark cursor-pointer" onclick="(this.parentElement).remove()"></i>
-    </div>
-</div>
 
   <script src="../script\main.js"></script>
 
