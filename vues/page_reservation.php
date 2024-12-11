@@ -15,7 +15,7 @@
       
     }else {
 
-      $stmt = "INSERT INTO reservations(activityId, userId, date_activity,time_activity) VALUES ('$activity_id',23,'$date_activity','$time_activity')";
+      $stmt = "INSERT INTO reservations(activityId, userId, date_activity,time_activity) VALUES ('$activity_id',24,'$date_activity','$time_activity')";
       mysqli_query($connx,$stmt);
       require_once "../vues/alert_Success.php";
     }
@@ -67,7 +67,11 @@ require_once "../vues/nav.php"
             $sql = "SELECT * FROM activites"; 
             $result = $connx->query($sql);
             while ($row = $result->fetch_assoc()) {
+              if ($row['Disponibilite']==1) {
+               
+             
                 echo '<option value="' . $row['id_activite'] . '">' . $row['Nom_activite'] . '</option>';
+              }
             }
           ?>
         </select>

@@ -1,7 +1,5 @@
 
 
-
-
 <?php 
 include '../db/connx.php';
  $squl = "SELECT * FROM activites";
@@ -12,6 +10,14 @@ include '../db/connx.php';
   $query= "DELETE FROM activites WHERE id_activite = '$id_activite'";
   $resulte = mysqli_query($connx,$query);
   require_once "../vues/alert_Success.php";
+  }
+  
+  if (isset($_POST['Search'])) {
+   $Search = $_POST['Search'];
+   $stmt = "SELECT * FROM activites WHERE Nom_activite = $Search";
+   $resultes = mysqli_query($connx,$stmt);
+   $rows =  $resultes->fetch_assoc();
+   echo $rows['Nom_activite'];
   }
 ?>
 
@@ -26,8 +32,8 @@ include '../db/connx.php';
 <?php
     require_once "../vues/hedaer.php";
     ?>
-    <h1 class="text-4xl font-semibold leading-9 text-gray-800 dark:text-white ml-[340px] mb-[30px]">All Activites de Salle de Sport</h1>
-
+    <!-- -->
+    
     <div class="overflow-x-auto font-[sans-serif] ml-[340px]">
 
       <table class="min-w-full bg-white">
@@ -38,10 +44,10 @@ include '../db/connx.php';
             </th>
             
             <th class="p-4 text-left text-sm font-semibold text-black">
-              Deadline
+             date
             </th>
             <th class="p-4 text-left text-sm font-semibold text-black">
-              Amount
+            Disponibilite
             </th>
             <th class="p-4 text-left text-sm font-semibold text-black">
               Action
@@ -52,8 +58,13 @@ include '../db/connx.php';
         <tbody class="whitespace-nowrap">
         <?php 
    
-   while ($row =$resluet->fetch_assoc()) {
-
+   while ($row = $resluet->fetch_assoc()) {
+  if ($row['Disponibilite'] != 1) {
+    $Disponibilite = "No Disponible";
+  }else {
+    $Disponibilite = "Disponible";
+    
+  }
     ?>
  <tr class="odd:bg-blue-50">
             <td class="p-4 text-sm">
@@ -70,7 +81,7 @@ include '../db/connx.php';
             <?php echo $row['date_debut']; ?>
             </td>
             <td class="p-4 text-sm">
-            <?php echo $row['Capacite']; ?>
+            <?php echo $Disponibilite; ?>
             </td>
             <td class="p-4">
               <button class="mr-4" title="Edit">

@@ -1,3 +1,10 @@
+<?php  
+// include '../db/connx.php';
+// $stmt = "SELECT COUNT(*) AS count FROM users";
+// $reslte = mysqli_query($connx,$stmt);
+//  $row =mysqli_fetch_assoc($reslte);
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -237,9 +244,10 @@
             <div class="p-4 text-right">
               <p class="block antialiased font-sans text-sm leading-normal font-normal text-blue-gray-600">Today's Money
               </p>
+ 
               <h4
                 class="block antialiased tracking-normal font-sans text-2xl font-semibold leading-snug text-blue-gray-900">
-                $53k</h4>
+               <?php echo'53k'; ?></h4>
             </div>
             <div class="border-t border-blue-gray-50 p-4">
               <p class="block antialiased font-sans text-base leading-relaxed font-normal text-blue-gray-600">
