@@ -13,7 +13,7 @@
       <div class='flex flex-wrap items-center justify-between gap-4 w-full'>
         <a href="javascript:void(0)"
           class="lg:absolute max-lg:left-10 lg:top-2/4 lg:left-2/4 lg:-translate-x-1/2 lg:-translate-y-1/2"><img
-            src="https://readymadeui.com/readymadeui.svg" alt="logo" class='w-36' />
+            src="../imgs\Capture_d_écran_2024-12-11_090559-removebg-preview.png" alt="logo" class='w-36' />
         </a>
 
         <div id="collapseMenu"
@@ -32,7 +32,7 @@
           <ul
             class='lg:flex lg:gap-x-5 max-lg:space-y-3 max-lg:fixed max-lg:bg-white max-lg:w-1/2 max-lg:min-w-[300px] max-lg:top-0 max-lg:left-0 max-lg:p-6 max-lg:h-full max-lg:shadow-md max-lg:overflow-auto z-50'>
             <li class='mb-6 hidden max-lg:block'>
-              <a href="javascript:void(0)"><img src="https://readymadeui.com/readymadeui.svg" alt="logo" class='w-36' />
+              <a href="javascript:void(0)"><img src="" alt="logo" class='w-36' />
               </a>
             </li>
             <li class='max-lg:border-b max-lg:py-3 px-3'>

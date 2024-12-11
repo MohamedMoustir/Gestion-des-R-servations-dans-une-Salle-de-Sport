@@ -29,9 +29,9 @@ if (isset($_POST['username'])&&isset($_POST['email'])&&isset($_POST['password'])
     <title>Document</title>
 </head>
 <body class=" ">
-    <section class="bg-[#2B2A2A] dark:bg-gray-900" style="background-image: url(../imgs/pexels-photo-5941991.webp); background-repeat: no-repeat; background-size: cover;">
+    <section class="bg-white dark:bg-gray-900" style="background-image: url(); background-repeat: no-repeat; background-size: cover;">
         <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
-            
+            <img src="../imgs\Capture_d_écran_2024-12-11_090559-removebg-preview.png" alt="" class='w-36'>
             <div class="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
                 <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
                     <h1 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
