@@ -2,8 +2,6 @@
 <?php 
 include '../db/connx.php';
 
- 
-
 if ( isset($_POST['activity-name'])&&isset($_POST['date_debut'])&&isset($_POST['date_fin'])&&isset($_POST['capacite'])&&isset($_POST['description'])&&isset($_POST['activity-image'])&&isset($_POST['disponibilite'])) {
     $Nom_Activite = $_POST['activity-name'];
     $Description = $_POST['description'];
@@ -19,9 +17,8 @@ if ( isset($_POST['activity-name'])&&isset($_POST['date_debut'])&&isset($_POST['
       mysqli_query($connx , $sql);
       require_once "../vues/alert_Success.php";
     } 
-    
-    
-}
+  }
+
 // Suppression
 if (isset($_GET['id'])) {
   $id = $_GET['id'];
@@ -60,9 +57,8 @@ if (isset($_GET['id'])) {
 
 $result = mysqli_query($connx, $stmt);
 
-?>
+      ?>
 
-  
 <section class="py-8 ml-[340px]">
         <div class="w-full max-w-7xl mx-auto px-6 md:px-8">
             <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6 lg:gap-0">
