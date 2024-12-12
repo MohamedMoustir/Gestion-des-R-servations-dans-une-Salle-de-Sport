@@ -12,12 +12,18 @@ if ($_SERVER['REQUEST_METHOD']==='POST' && isset($_POST['email']) && isset($_POS
     if (empty( $email)||empty( $password)) {
 
     }else{
-     $stmt ="SELECT email,pass_word,isAdmin FROM users WHERE email = '$email' AND pass_word = '$password'";
-     
+     $stmt ="SELECT email,pass_word,isAdmin FROM users WHERE email = '$email' ";
+ 
      $result = $connx->query($stmt);
      if ($result->num_rows>0){
       $user = $result->fetch_assoc();
-      if ($user['isAdmin']== '1') {
+      $hachpassowrd= $user['pass_word'];
+      if (password_verify($password ,$hachpassowrd)) {
+
+
+      
+        # code...   
+      if ($user['isAdmin']== '1'){
       header('location:../vues\dachbourd.php');
       }else {
         header('location:../vues/home.php');
@@ -26,7 +32,7 @@ if ($_SERVER['REQUEST_METHOD']==='POST' && isset($_POST['email']) && isset($_POS
     }else {
       echo 'is not valde';
     }
-   
+}
 }
 }
 
