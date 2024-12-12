@@ -4,8 +4,8 @@ if (isset($_POST['search'])) {
     $url = $_POST['search'];
     header("Location: ../vues/$url");
 }
-
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -122,4 +122,5 @@ if (isset($_POST['search'])) {
 
     </script>
 </body>
-</html>
+</html>000
+3
