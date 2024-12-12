@@ -5,12 +5,11 @@ include '../db/connx.php';
 if (isset($_POST['username'])&&isset($_POST['email'])&&isset($_POST['password'])) {
     $username = $_POST['username'];
     $email = $_POST['email'];
-    $password = $_POST['password'];
- 
-    if (empty( $username)||empty( $email)||empty( $password)) {
+    $passwords = password_hash($_POST['password'],PASSWORD_DEFAULT);
+    if (empty( $username)||empty( $email)||empty( $passwords)) {
 
     }else{
-      $sql = "INSERT INTO  users(username,email,pass_word) VALUES ('$username','$email','$password')";
+      $sql = "INSERT INTO  users(username,email,pass_word) VALUES ('$username','$email','$passwords')";
       mysqli_query($connx , $sql);
 
     }
