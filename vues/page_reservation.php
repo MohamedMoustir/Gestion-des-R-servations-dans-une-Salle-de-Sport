@@ -15,7 +15,7 @@
       
     }else {
 
-      $stmt = "INSERT INTO reservations(activityId, userId, date_activity,time_activity) VALUES ('$activity_id',24,'$date_activity','$time_activity')";
+      $stmt = "INSERT INTO reservations(activityId, userId, date_activity,time_activity) VALUES ('$activity_id',29,'$date_activity','$time_activity')";
       mysqli_query($connx,$stmt);
       require_once "../vues/alert_Success.php";
     }
