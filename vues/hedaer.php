@@ -1,11 +1,21 @@
+<?php
+
+include '../db/connx.php';
+?>
 <?php  
-// include '../db/connx.php';
-// $stmt = "SELECT COUNT(*) AS count FROM users";
-// $reslte = mysqli_query($connx,$stmt);
-//  $row =mysqli_fetch_assoc($reslte);
+
+$count = "SELECT COUNT(*) AS count_users FROM users";
+ $res = mysqli_query($connx,$count);
+ $rowx = mysqli_fetch_assoc($res);
 
 ?>
+<?php  
 
+$coun = "SELECT COUNT(*) AS count_activ FROM activites";
+ $resl =mysqli_query($connx,$coun);
+ $rowm = mysqli_fetch_assoc($resl);
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -242,12 +252,12 @@
               </svg>
             </div>
             <div class="p-4 text-right">
-              <p class="block antialiased font-sans text-sm leading-normal font-normal text-blue-gray-600">Today's Money
+              <p class="block antialiased font-sans text-sm leading-normal font-normal text-blue-gray-600">Activites
               </p>
  
               <h4
                 class="block antialiased tracking-normal font-sans text-2xl font-semibold leading-snug text-blue-gray-900">
-               <?php echo'53k'; ?></h4>
+               <?php echo $rowm['count_activ']; ?></h4>
             </div>
             <div class="border-t border-blue-gray-50 p-4">
               <p class="block antialiased font-sans text-base leading-relaxed font-normal text-blue-gray-600">
@@ -270,7 +280,7 @@
               </p>
               <h4
                 class="block antialiased tracking-normal font-sans text-2xl font-semibold leading-snug text-blue-gray-900"
-                id="nwe_usaer">2,300</h4>
+                id="nwe_usaer"><?php echo $rowx['count_users'] ?></h4>
             </div>
             <div class="border-t border-blue-gray-50 p-4">
               <p class="block antialiased font-sans text-base leading-relaxed font-normal text-blue-gray-600">

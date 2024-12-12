@@ -38,8 +38,6 @@
 require_once "../vues/nav.php"
 ?>
 
-  
-    
       <!-- Card 1 -->
       <form class="w-screen bg-gray-50 py-12" method="POST">
   <!-- Section d'en-tête -->
