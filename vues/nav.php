@@ -50,16 +50,14 @@
               class='hover:text-[#007bff] text-[#333] block font-semibold text-[15px]'>Réserve Now</a>
             </li>
             <li class='max-lg:border-b max-lg:py-3 px-3'><a href='../vues/activites_user.php'
-              class='hover:text-[#007bff] text-[#333] block font-semibold text-[15px]'>Blog</a>
+              class='hover:text-[#007bff] text-[#333] block font-semibold text-[15px]'>Activities</a>
             </li>
           </ul>
         </div>
 
-        <div class='flex items-center ml-auto space-x-6'>
-          <button class='font-semibold text-[15px] border-none outline-none'><a href='../vues/login.php'
-            class='text-[#007bff] hover:underline'>Login</a></button>
+       
           <button 
-            class='px-4 py-2 text-sm rounded-sm font-bold text-white border-2 border-[#007bff] bg-[#007bff] transition-all ease-in-out duration-300 hover:bg-transparent hover:text-[#007bff]'><a href="../vues/Rojester.php">Sign up</a>
+            class='px-4 py-2 text-sm rounded-sm font-bold text-white border-2 border-[#007bff] bg-[#007bff] transition-all ease-in-out duration-300 hover:bg-transparent hover:text-[#007bff]'><a href="../vues/login.php">log out</a>
             </button>
 
           <button id="toggleOpen" class='lg:hidden'>
@@ -72,5 +70,21 @@
         </div>
       </div>
     </header>
+
+    <script >
+      const toggleOpen = document.getElementById('toggleOpen');
+const toggleClose = document.getElementById('toggleClose');
+const collapseMenu = document.getElementById('collapseMenu');
+toggleOpen.addEventListener('click', () => {
+ 
+  collapseMenu.classList.remove('max-lg:hidden');
+
+});
+
+toggleClose.addEventListener('click', () => {
+  collapseMenu.classList.add('max-lg:hidden');
+});
+
+    </script>
 </body>
 </html>
