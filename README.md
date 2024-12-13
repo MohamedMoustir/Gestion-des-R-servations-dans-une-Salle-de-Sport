@@ -6,6 +6,7 @@ Une salle de sport souhaite moderniser son système de gestion en mettant en pla
 - Gérer les membres inscrits à la salle.
 - Planifier et afficher les activités ou équipements disponibles.
 - Permettre aux membres de réserver des activités ou des équipements.
+![image](https://github.com/user-attachments/assets/d28bc53b-675e-4a92-bb77-94de6e9405fc)
 
 ## Objectifs
 Ce projet a pour objectif de fournir une solution complète pour gérer les réservations de la salle de sport, incluant :
