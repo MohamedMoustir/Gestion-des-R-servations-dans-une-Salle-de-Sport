@@ -122,5 +122,4 @@ if (isset($_POST['search'])) {
 
     </script>
 </body>
-</html>000
-3
+</html>

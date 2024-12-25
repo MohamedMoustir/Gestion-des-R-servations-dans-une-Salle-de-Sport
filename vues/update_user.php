@@ -27,7 +27,6 @@ if (!$resltes) {
 } else {
   require_once "../vues/alert_Success.php";
 }
-
    
 }
    ?>
